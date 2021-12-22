@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "group",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "minLength": 3
+        },
+        "ingredients":{
+            "type": "string",
+            "minLength": 3
+            },
+        "estimatedTime":{
+            "type": "integer",
+            "minimum": 0
+        },
+        "manual": {
+            "type": "string"
+        }
+ 
+    },
+    "required": [
+      "name",
+      "ingredients",
+      "estimatedTime",
+      "manual"
+    ],
+    "additionalProperties": false
+  }
+  
