@@ -39,7 +39,8 @@ export default {
             ingredients:'',
             manual: '',
             submitButtonText: 'Submit Recipe',
-            recipe: {}
+            recipe: {},
+            imgUrl: ''
         }
     },
     setup() {
@@ -65,9 +66,10 @@ export default {
                     });
                 console.log(response.data.item)
                 this.recipe = response.data.item;
-
-                await this.uploadFile(this.recipe.recipeId)
-
+                
+                if (imgUrl != ''){
+                    await this.uploadFile(this.recipe.recipeId)
+                }
                 window.alert("Recipe was successfully created.\nYou will be redirected to home.")
                 this.$router.push('/')
             }catch(error){
